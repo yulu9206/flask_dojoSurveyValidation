@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>Please input name and comment!</h2>
+	{% with messages = get_flashed_messages() %}
+  	{% if messages %}
+    	{% for message in messages %}
+      		<p>{{message}}</p>
+    	{% endfor %}
+  	{% endif %}
+	{% endwith %}
+	<form action="/info" margin="300px aotu" method="post">
+		Your Name <input width="500px" type="text" name="name">
+		Dojo Location 
+		<select name="location">
+			<option>San Jose</option>
+			<option>Seatle</option>
+		</select>
+		Favourite Language 
+		<select name="language">
+			<option>Python</option>
+			<option>Ruby</option>
+		</select>
+		Comment(optional) 
+		<textarea name="comment"></textarea>
+		<input type="submit" name="submit" value="submit">
+	</form>
+</body>
+</html>
+
+<!-- <html>
+<head>
+  <title>Basic Validation Example</title>
+</head>
+<body>
+  <h1>Enter a Valid(Any) Name!</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <form action='/process' method='POST'>
+    Name:<input type="text" name="name">
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html> -->
